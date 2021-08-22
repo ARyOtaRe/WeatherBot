@@ -9,7 +9,7 @@ client=commands.Bot(command_prefix=commands.when_mentioned_or('Weather:'))
 #client.remove_command('help')
 
 
-@client.command(name='current',description='Displays the current weather in a city of your choice',aliases=["crt","now"])
+@client.command(description='Displays the current weather in a city of your choice',aliases=["crt","now"])
 async def current(ctx,*,args):
     complete_api_link="https://api.openweathermap.org/data/2.5/weather?q="+ args +"&appid=6e2d2db27e5a42fa384a698d859fc686"
     api_link=requests.get(complete_api_link)
