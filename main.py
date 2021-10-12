@@ -10,6 +10,7 @@ client=commands.Bot(command_prefix=commands.when_mentioned_or('MétéoBot:'))
 
 
 @client.command(description='Displays the current weather in a city of your choice',aliases=["crt","now"])
+#@commands.is_owner()
 async def current(ctx,*,args):
     complete_api_link="https://api.openweathermap.org/data/2.5/weather?q="+ args +"&appid=6e2d2db27e5a42fa384a698d859fc686"
     api_link=requests.get(complete_api_link)
@@ -22,7 +23,7 @@ async def current(ctx,*,args):
         temperature=((api_data['main']['temp'])-273.15)
         windspeed=((api_data['wind']['speed'])*3.6)
         city = f'{args}\'' if args[-1]=='s' else f'{args}\'s'
-        embed=discord.Embed(title=f'Here is {city.capitalize()} weather right now', description='Reminder that it\'s not always accurate, pls no bully me', color=0xce2029)\
+        embed=discord.Embed(title=f'Here is {city.capitalize()} weather right now', description='Reminder that it\'s not always accurate.', color=0xce2029)\
             .add_field(name='Weather description:',value=f"{api_data['weather'][0]['description']}".capitalize(), inline=False)\
             .add_field(name='Average temperature', value=f"{float(temperature):,.2f} °C",inline=False)\
             .add_field(name='Humidity',value=f"{api_data['main']['humidity']}%", inline=False)\
