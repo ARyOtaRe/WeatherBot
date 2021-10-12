@@ -33,4 +33,4 @@ async def current(ctx,*,args):
     await ctx.send(embed=embed)
     #print(city)
 
-client.run('NzgzMzQ0NTg2NDA3OTM2MDQw.X8ZYfw.8y5o1mqKTZOynKdLrLMHQc6PoCk')
+client.run('ODk3NTI1MDg3MzA0MDQ4Njcx.YWW7YA.T1Uzrpvpb5L6hCKj-vSyb6vObsY')
