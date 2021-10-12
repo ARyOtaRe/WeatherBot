@@ -5,7 +5,7 @@ import requests
 
 
 
-client=commands.Bot(command_prefix=commands.when_mentioned_or('Weather:'))
+client=commands.Bot(command_prefix=commands.when_mentioned_or('MétéoBot:'))
 #client.remove_command('help')
 
 
