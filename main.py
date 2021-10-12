@@ -34,12 +34,6 @@ async def current(ctx,*,args):
     await ctx.send(embed=embed)
     #print(city)
 
-<<<<<<< Updated upstream
-client.run('ODk3NTI1MDg3MzA0MDQ4Njcx.YWW7YA.T1Uzrpvpb5L6hCKj-vSyb6vObsY')
-=======
-<<<<<<< HEAD
-
-
 @client.command(description='Gives you invitation links to add it to your server',aliases=['inv','invitation'])
 async def invite(ctx):
     embed=discord.Embed(title="Invitations", description="", color=0xE20088) \
@@ -49,8 +43,4 @@ async def invite(ctx):
     .set_author(name="merci pour l'invitation bg!")
     embed.timestamp=datetime.now()
     await ctx.send(embed=embed) 
-client.run('NzgzMzQ0NTg2NDA3OTM2MDQw.X8ZYfw.8y5o1mqKTZOynKdLrLMHQc6PoCk')
-=======
 client.run('ODk3NTI1MDg3MzA0MDQ4Njcx.YWW7YA.T1Uzrpvpb5L6hCKj-vSyb6vObsY')
->>>>>>> f75e5770f79d6c64210a4fc006c93f72ef109bd8
->>>>>>> Stashed changes
