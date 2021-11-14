@@ -44,6 +44,7 @@ async def inviter(ctx):
     embed.timestamp=datetime.now()
     await ctx.send(embed=embed) 
 
+
 @client.command()
 @commands.is_owner()
 async def squarfiuz(ctx):
