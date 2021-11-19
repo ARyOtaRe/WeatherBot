@@ -11,7 +11,7 @@ client=commands.Bot(command_prefix=commands.when_mentioned_or('WeatherBot:'))
 
 @client.command(description='Shows the weather information of the city of your choice!',aliases=["crt","now"])
 async def current(ctx,*,args):
-    complete_api_link="https://api.openweathermap.org/data/2.5/weather?q="+ args +"&appid=6e2d2db27e5a42fa384a698d859fc686"
+    complete_api_link="https://api.openweathermap.org/data/2.5/weather?q="+ args +"&appid="
     api_link=requests.get(complete_api_link)
     api_data=api_link.json()
     print(complete_api_link)
