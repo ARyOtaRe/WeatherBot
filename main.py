@@ -7,7 +7,11 @@ import requests
 
 client=commands.Bot(command_prefix=commands.when_mentioned_or('WeatherBot:'))
 
-
+@client.event
+async def on_message(message):
+    # don't respond to ourselves
+    if message.author == client.user:
+        return 
 
 @client.command(description='Shows the weather information of the city of your choice!',aliases=["crt","now"])
 async def current(ctx,*,args):
