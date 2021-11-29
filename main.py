@@ -2,8 +2,14 @@ import discord
 from discord.ext import commands
 from datetime import datetime
 import requests
+import os
+import json
 
 
+
+
+with open(os.path.join("C:\\Users\\ARyOtaRe\\Documents\\GitHub\\WeatherBot"),'tokens.json','r') as token_file:
+    Tokens=json.loads(token_file.read())
 
 client=commands.Bot(command_prefix=commands.when_mentioned_or('WeatherBot:'))
 
