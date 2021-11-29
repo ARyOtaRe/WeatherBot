@@ -27,7 +27,7 @@ async def on_ready():
 
 @client.command(description='Shows the weather information of the city of your choice!',aliases=["crt","now"])
 async def current(ctx,*,args):
-    complete_api_link="https://api.openweathermap.org/data/2.5/weather?q="+ args +"&appid="+Tokens["openweathermap_tokens"]["appid"]
+    complete_api_link=f"https://api.openweathermap.org/data/2.5/weather?q={args}&appid={Tokens["openweathermap_tokens"]["appid"]}"
     api_link=requests.get(complete_api_link)
     api_data=api_link.json()
     print(complete_api_link)
