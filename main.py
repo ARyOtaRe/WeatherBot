@@ -8,7 +8,7 @@ import json
 
 
 
-with open(os.path.join("C:\\Users\\ARyOtaRe\\Documents\\GitHub\\WeatherBot"),'tokens.json','r') as token_file:
+with open(os.path.join("C:\\Users\\ARyOtaRe\\Documents\\GitHub\\WeatherBot",'tokens.json'),'r') as token_file:
     Tokens=json.loads(token_file.read())
 
 client=commands.Bot(command_prefix=commands.when_mentioned_or('WeatherBot:'))
@@ -19,9 +19,15 @@ async def on_message(message):
     if message.author == client.user:
         return 
 
+@client.event
+async def on_ready():
+    general=client.get_channel(914809013185675334)
+    await general.send("What time is it?")
+    print("yahoo")
+
 @client.command(description='Shows the weather information of the city of your choice!',aliases=["crt","now"])
 async def current(ctx,*,args):
-    complete_api_link="https://api.openweathermap.org/data/2.5/weather?q="+ args +"&appid="
+    complete_api_link="https://api.openweathermap.org/data/2.5/weather?q="+ args +"&appid="+Tokens["openweathermap_tokens"]["appid"]
     api_link=requests.get(complete_api_link)
     api_data=api_link.json()
     print(complete_api_link)
@@ -55,5 +61,5 @@ async def invite(ctx):
     await ctx.send(embed=embed) 
 
 
-client.run('bot_token')
+client.run(Tokens["bot_token"]["token"])
 
