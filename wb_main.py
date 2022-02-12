@@ -19,6 +19,7 @@ async def on_message(message):
     # don't respond to ourselves
     if message.author == client.user:
         return 
+    await client.process_commands(message)
 
 @client.event
 async def on_ready():
@@ -31,14 +32,14 @@ async def current(ctx,*args):
     """Shows the weather information of the city of your choice!"""
     print("Bitch Lasagna")
     try:
-        complete_api_link="https://api.openweathermap.org/data/2.5/weather?q="+f"{args}" +"&appid="+ f"{Tokens['openweathermap_tokens']['appid']}"
-        
+        complete_api_link = f"https://api.openweathermap.org/data/2.5/weather?q={args}&appid={Tokens['openweathermap_tokens']['appid']}"
+
+
         api_link=requests.get(complete_api_link)
         api_data=api_link.json()
         print(complete_api_link)
     except requests.exceptions.RequestException as e:
         print(e)
-
     if api_data['cod']=='404':
         embed=discord.Embed(title='The city you\'re trying to get the weather from does not exist!', description='Please check if you\'ve made any typo, or get the weather from the closest city :)', color=0xce2029)
     else:
