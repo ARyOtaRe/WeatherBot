@@ -9,7 +9,7 @@ import json
 
 
 
-client=commands.Bot(command_prefix=commands.when_mentioned_or('WB!'))
+client=commands.Bot(command_prefix=commands.when_mentioned_or('}'))
 
 with open(os.path.join("C:\\Users\\ARyOtaRe\\Documents\\GitHub\\WeatherBot",'tokens.json'),'r') as token_file:
     Tokens=json.loads(token_file.read())
@@ -26,6 +26,7 @@ async def on_ready():
     general=client.get_channel(914809013185675334)
     await general.send("What time is it?")
     print("yahoo")
+    await client.change_presence(activity = discord.Activity(name =" The end of the world | Prefix: '}'", type = discord.ActivityType.watching)) 
 
 @client.command(aliases=["crt","now"])
 async def current(ctx,*args):
